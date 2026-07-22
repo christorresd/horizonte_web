@@ -195,109 +195,78 @@
   </section>
 
   <!-- Manifiesto Section / Nuestro porqué -->
-  <section id="manifiesto" class="section container">
-    <div class="section-header reveal">
-      <span class="section-kicker">FILOSOFÍA & FIRMA</span>
-      <h2 class="section-title">Nuestro porqué</h2>
-      <p class="section-desc" style="font-size: 1.3rem; margin-bottom: 1.5rem;">
-        Vivimos en la era de la automatización y la homogeneidad. Todo se ha convertido en un ruido digital constante de
-        contenido replicado.
-      </p>
-      <p class="section-desc" style="font-size: 1.3rem; margin-bottom: 2rem;">
-        Nuestra firma visual representa el alma: manos humanas dominando la tecnología, uniendo piezas de distintos
-        tiempos para crear comunicación viva y provocadora.
-      </p>
-      <h3 class="font-antonio text-pink"
-        style="font-size: 2.5rem; border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 2rem;">
-        ¡Combatimos la irrelevancia digital!
-      </h3>
+  <section id="manifiesto" class="container">
+    <div class="glass-section-card reveal">
+      <div class="section-header">
+        <span class="section-kicker">FILOSOFÍA & FIRMA</span>
+        <h2 class="section-title">Nuestro porqué</h2>
+        <p class="section-desc" style="font-size: 1.3rem; margin-bottom: 1.5rem;">
+          Vivimos en la era de la automatización y la homogeneidad. Todo se ha convertido en un ruido digital constante de
+          contenido replicado.
+        </p>
+        <p class="section-desc" style="font-size: 1.3rem; margin-bottom: 2rem;">
+          Nuestra firma visual representa el alma: manos humanas dominando la tecnología, uniendo piezas de distintos
+          tiempos para crear comunicación viva y provocadora.
+        </p>
+        <h3 class="font-antonio text-pink"
+          style="font-size: 2.5rem; border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 2rem;">
+          ¡Combatimos la irrelevancia digital!
+        </h3>
+      </div>
     </div>
   </section>
 
-  <!-- Portafolio Section (Infinite Scroll Marquee) -->
-  <section id="portafolio" class="section portfolio" style="padding-bottom: 4rem;">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-kicker">GALERÍA 2026</span>
+  <!-- Portafolio Section (Static 2x2 Grid) -->
+  <section id="portafolio" class="container">
+    <div class="glass-section-card reveal">
+      <div class="section-header">
+        <span class="section-kicker">GALERÍA CREATIVA</span>
         <h2 class="section-title">Portafolio</h2>
-        <p class="section-desc">Nuestras creaciones visuales con alma creativa (Pasa el cursor para pausar).</p>
-      </div>
-    </div>
-
-    <div class="portfolio__marquee">
-      <div class="portfolio__marquee-content">
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_branding.png" alt="Identidad de Marca Rebranding 2026"
-            class="portfolio__img">
-          <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">BRAND IDENTITY AURA</h3>
-            <p style="color: #aaa;">Rebranding completo con holografía y empaques 3D.</p>
-          </div>
-        </div>
-
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_web.png" alt="Desarrollo Web UI UX Studio Showcase"
-            class="portfolio__img">
-          <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">UI/UX PLATAFORMA LUMINATE</h3>
-            <p style="color: #aaa;">Experiencia web interactiva con glassmorphism.</p>
-          </div>
-        </div>
-
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_social.png" alt="Estrategia Social Media Content Pop"
-            class="portfolio__img">
-          <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">CAMPAÑA DIGITAL POP</h3>
-            <p style="color: #aaa;">Estrategia de contenido disruptivo y Reels en vertical.</p>
-          </div>
-        </div>
-
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_audiovisual.png" alt="Producción Audiovisual y Cine 3D"
-            class="portfolio__img">
-          <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">PRODUCCIÓN AUDIOVISUAL</h3>
-            <p style="color: #aaa;">Dirección de arte, fotografía y producción de alto impacto.</p>
-          </div>
-        </div>
+        <p class="section-desc">Nuestras creaciones visuales de alto impacto producidas con intención y alma.</p>
       </div>
 
-      <!-- Duplicado para loop infinito fluído sin cortes -->
-      <div class="portfolio__marquee-content" aria-hidden="true">
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_branding.png" alt="Identidad de Marca Rebranding 2026"
-            class="portfolio__img">
+      <div class="portfolio__grid">
+        <div class="portfolio__grid-card">
+          <div class="portfolio__img-wrapper">
+            <img src="./assets/images/portfolio_branding.png" alt="Identidad de Marca Rebranding 2026"
+              class="portfolio__img">
+          </div>
           <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">BRAND IDENTITY AURA</h3>
-            <p style="color: #aaa;">Rebranding completo con holografía y empaques 3D.</p>
+            <h3 class="font-antonio" style="font-size: 1.8rem; margin-bottom: 0.4rem;">BRAND IDENTITY AURA</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Rebranding completo con holografía y empaques 3D.</p>
           </div>
         </div>
 
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_web.png" alt="Desarrollo Web UI UX Studio Showcase"
-            class="portfolio__img">
+        <div class="portfolio__grid-card">
+          <div class="portfolio__img-wrapper">
+            <img src="./assets/images/portfolio_web.png" alt="Desarrollo Web UI UX Studio Showcase"
+              class="portfolio__img">
+          </div>
           <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">UI/UX PLATAFORMA LUMINATE</h3>
-            <p style="color: #aaa;">Experiencia web interactiva con glassmorphism.</p>
+            <h3 class="font-antonio" style="font-size: 1.8rem; margin-bottom: 0.4rem;">UI/UX PLATAFORMA LUMINATE</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Experiencia web interactiva con glassmorphism.</p>
           </div>
         </div>
 
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_social.png" alt="Estrategia Social Media Content Pop"
-            class="portfolio__img">
+        <div class="portfolio__grid-card">
+          <div class="portfolio__img-wrapper">
+            <img src="./assets/images/portfolio_social.png" alt="Estrategia Social Media Content Pop"
+              class="portfolio__img">
+          </div>
           <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">CAMPAÑA DIGITAL POP</h3>
-            <p style="color: #aaa;">Estrategia de contenido disruptivo y Reels en vertical.</p>
+            <h3 class="font-antonio" style="font-size: 1.8rem; margin-bottom: 0.4rem;">CAMPAÑA DIGITAL POP</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Estrategia de contenido disruptivo y Reels en vertical.</p>
           </div>
         </div>
 
-        <div class="portfolio__card">
-          <img src="./assets/images/portfolio_audiovisual.png" alt="Producción Audiovisual y Cine 3D"
-            class="portfolio__img">
+        <div class="portfolio__grid-card">
+          <div class="portfolio__img-wrapper">
+            <img src="./assets/images/portfolio_audiovisual.png" alt="Producción Audiovisual y Cine 3D"
+              class="portfolio__img">
+          </div>
           <div class="portfolio__info">
-            <h3 class="font-antonio" style="font-size: 1.8rem;">PRODUCCIÓN AUDIOVISUAL</h3>
-            <p style="color: #aaa;">Dirección de arte, fotografía y producción de alto impacto.</p>
+            <h3 class="font-antonio" style="font-size: 1.8rem; margin-bottom: 0.4rem;">PRODUCCIÓN AUDIOVISUAL</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Dirección de arte, fotografía y producción de alto impacto.</p>
           </div>
         </div>
       </div>
@@ -305,9 +274,9 @@
   </section>
 
   <!-- Stats / Métricas Bar -->
-  <section class="container" style="padding: 2rem 1.5rem 6rem;">
+  <section class="container">
     <div
-      style="background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;"
+      style="background: rgba(255,255,255,0.03); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.08); border-radius: 32px; padding: 3.5rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; margin-bottom: 5rem;"
       class="reveal">
       <div>
         <div class="font-antonio text-pink" style="font-size: 3.5rem; line-height: 1; font-weight: 700;">+150</div>
@@ -329,122 +298,126 @@
   </section>
 
   <!-- Servicios / Teclado Creativo -->
-  <section id="servicios" class="section services container">
-    <div class="section-header reveal">
-      <span class="section-kicker">NUESTRO UNIVERSO</span>
-      <h2 class="section-title">Servicios</h2>
-      <p class="section-desc">Dominamos el código de la era digital y la inteligencia artificial, pero nuestra alma creativa es la que compone.</p>
-    </div>
-
-    <div class="services__grid">
-      <!-- Servicio 1: Branding -->
-      <div class="service-card reveal" onclick="Pricing.navigateToTab('branding');">
-        <div class="service-card__symbol">#</div>
-        <div class="service-card__keycap">
-          <i data-lucide="lightbulb" style="width: 42px; height: 42px;"></i>
-        </div>
-        <h3 class="service-card__title">BRANDING</h3>
-        <p class="service-card__desc">Identidad corporativa. Más que un logo, diseñamos el alma de tu negocio con
-          estrategia visual sólida.</p>
-        <span class="service-card__link">VER TARIFAS →</span>
+  <section id="servicios" class="container">
+    <div class="glass-section-card reveal">
+      <div class="section-header">
+        <span class="section-kicker">NUESTRO UNIVERSO</span>
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-desc">Dominamos el código de la era digital y la inteligencia artificial, pero nuestra alma creativa es la que compone.</p>
       </div>
 
-      <!-- Servicio 2: Diseño Gráfico -->
-      <div class="service-card reveal" onclick="Pricing.navigateToTab('grafico');">
-        <div class="service-card__symbol">[ ]</div>
-        <div class="service-card__keycap">
-          <i data-lucide="pen-tool" style="width: 42px; height: 42px;"></i>
+      <div class="services__grid">
+        <!-- Servicio 1: Branding -->
+        <div class="service-card" onclick="Pricing.navigateToTab('branding');">
+          <div class="service-card__symbol">#</div>
+          <div class="service-card__keycap">
+            <i data-lucide="lightbulb" style="width: 42px; height: 42px;"></i>
+          </div>
+          <h3 class="service-card__title">BRANDING</h3>
+          <p class="service-card__desc">Identidad corporativa. Más que un logo, diseñamos el alma de tu negocio con
+            estrategia visual sólida.</p>
+          <span class="service-card__link">VER TARIFAS →</span>
         </div>
-        <h3 class="service-card__title">DISEÑO GRÁFICO</h3>
-        <p class="service-card__desc">Fusión táctil de elementos reales y digitales. Estilo único que rompe lo genérico.
-        </p>
-        <span class="service-card__link">VER TARIFAS →</span>
-      </div>
 
-      <!-- Servicio 3: Desarrollo Web -->
-      <div class="service-card reveal" onclick="Pricing.navigateToTab('web');">
-        <div class="service-card__symbol">{ }</div>
-        <div class="service-card__keycap" style="color: #3b82f6;">
-          <i data-lucide="code" style="width: 42px; height: 42px;"></i>
+        <!-- Servicio 2: Diseño Gráfico -->
+        <div class="service-card" onclick="Pricing.navigateToTab('grafico');">
+          <div class="service-card__symbol">[ ]</div>
+          <div class="service-card__keycap">
+            <i data-lucide="pen-tool" style="width: 42px; height: 42px;"></i>
+          </div>
+          <h3 class="service-card__title">DISEÑO GRÁFICO</h3>
+          <p class="service-card__desc">Fusión táctil de elementos reales y digitales. Estilo único que rompe lo genérico.
+          </p>
+          <span class="service-card__link">VER TARIFAS →</span>
         </div>
-        <h3 class="service-card__title">DESARROLLO WEB</h3>
-        <p class="service-card__desc">Plataformas donde la creatividad se encuentra con el código funcional impecable.
-        </p>
-        <span class="service-card__link" style="color: #3b82f6;">VER TARIFAS →</span>
-      </div>
 
-      <!-- Servicio 4: Audiovisual -->
-      <div class="service-card reveal" onclick="Pricing.navigateToTab('audiovisual');">
-        <div class="service-card__symbol">&gt;</div>
-        <div class="service-card__keycap" style="color: #22c55e;">
-          <i data-lucide="camera" style="width: 42px; height: 42px;"></i>
+        <!-- Servicio 3: Desarrollo Web -->
+        <div class="service-card" onclick="Pricing.navigateToTab('web');">
+          <div class="service-card__symbol">{ }</div>
+          <div class="service-card__keycap" style="color: #3b82f6;">
+            <i data-lucide="code" style="width: 42px; height: 42px;"></i>
+          </div>
+          <h3 class="service-card__title">DESARROLLO WEB</h3>
+          <p class="service-card__desc">Plataformas donde la creatividad se encuentra con el código funcional impecable.
+          </p>
+          <span class="service-card__link" style="color: #3b82f6;">VER TARIFAS →</span>
         </div>
-        <h3 class="service-card__title">AUDIOVISUAL</h3>
-        <p class="service-card__desc">Grabación y edición contada a través del lente con pura intención humana.</p>
-        <span class="service-card__link" style="color: #22c55e;">VER TARIFAS →</span>
-      </div>
 
-      <!-- Servicio 5: Streaming -->
-      <div class="service-card reveal" onclick="Pricing.navigateToTab('streaming');">
-        <div class="service-card__symbol">.</div>
-        <div class="service-card__keycap" style="color: #ef4444;">
-          <i data-lucide="radio" style="width: 42px; height: 42px;"></i>
+        <!-- Servicio 4: Audiovisual -->
+        <div class="service-card" onclick="Pricing.navigateToTab('audiovisual');">
+          <div class="service-card__symbol">&gt;</div>
+          <div class="service-card__keycap" style="color: #22c55e;">
+            <i data-lucide="camera" style="width: 42px; height: 42px;"></i>
+          </div>
+          <h3 class="service-card__title">AUDIOVISUAL</h3>
+          <p class="service-card__desc">Grabación y edición contada a través del lente con pura intención humana.</p>
+          <span class="service-card__link" style="color: #22c55e;">VER TARIFAS →</span>
         </div>
-        <h3 class="service-card__title">STREAMING</h3>
-        <p class="service-card__desc">Transmisiones en vivo profesionales conectando tu evento con el mundo entero.</p>
-        <span class="service-card__link" style="color: #ef4444;">VER TARIFAS →</span>
-      </div>
 
-      <!-- Servicio 6: Redes Sociales -->
-      <div class="service-card reveal" onclick="Pricing.navigateToTab('redes');">
-        <div class="service-card__symbol">@</div>
-        <div class="service-card__keycap" style="color: var(--color-pink-light);">
-          <i data-lucide="smartphone" style="width: 42px; height: 42px;"></i>
+        <!-- Servicio 5: Streaming -->
+        <div class="service-card" onclick="Pricing.navigateToTab('streaming');">
+          <div class="service-card__symbol">.</div>
+          <div class="service-card__keycap" style="color: #ef4444;">
+            <i data-lucide="radio" style="width: 42px; height: 42px;"></i>
+          </div>
+          <h3 class="service-card__title">STREAMING</h3>
+          <p class="service-card__desc">Transmisiones en vivo profesionales conectando tu evento con el mundo entero.</p>
+          <span class="service-card__link" style="color: #ef4444;">VER TARIFAS →</span>
         </div>
-        <h3 class="service-card__title">REDES SOCIALES</h3>
-        <p class="service-card__desc">Gestión estratégica, Reels en vertical y administración de pauta para conectar con
-          tu público.</p>
-        <span class="service-card__link" style="color: var(--color-pink-light);">VER TARIFAS →</span>
+
+        <!-- Servicio 6: Redes Sociales -->
+        <div class="service-card" onclick="Pricing.navigateToTab('redes');">
+          <div class="service-card__symbol">@</div>
+          <div class="service-card__keycap" style="color: var(--color-pink-light);">
+            <i data-lucide="smartphone" style="width: 42px; height: 42px;"></i>
+          </div>
+          <h3 class="service-card__title">REDES SOCIALES</h3>
+          <p class="service-card__desc">Gestión estratégica, Reels en vertical y administración de pauta para conectar con
+            tu público.</p>
+          <span class="service-card__link" style="color: var(--color-pink-light);">VER TARIFAS →</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Sección Proceso (Así trabajamos) -->
-  <section id="proceso" class="section container">
-    <div class="section-header reveal">
-      <span class="section-kicker">NUESTRA METODOLOGÍA</span>
-      <h2 class="section-title">Así creamos contigo</h2>
-      <p class="section-desc">Un proceso estructurado de 3 pasos que garantiza resultados trascendentes para tu marca.</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      <div class="service-card reveal">
-        <span class="font-antonio text-pink" style="font-size: 4rem; line-height: 1; opacity: 0.8;">01</span>
-        <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">BRIEF & ESTRATEGIA</h3>
-        <p style="color: #aaa; font-size: 0.95rem;">Escuchamos tu visión con oídos creativos. Analizamos tu mercado para
-          diseñar una estrategia que rompa el ruido digital.</p>
+  <section id="proceso" class="container">
+    <div class="glass-section-card reveal">
+      <div class="section-header">
+        <span class="section-kicker">NUESTRA METODOLOGÍA</span>
+        <h2 class="section-title">Así creamos contigo</h2>
+        <p class="section-desc">Un proceso estructurado de 3 pasos que garantiza resultados trascendentes para tu marca.</p>
       </div>
 
-      <div class="service-card reveal">
-        <span class="font-antonio text-gold" style="font-size: 4rem; line-height: 1; opacity: 0.8;">02</span>
-        <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">DIRECCIÓN DE ARTE & IA</h3>
-        <p style="color: #aaa; font-size: 0.95rem;">Creamos e iteramos combinando intuición humana y herramientas de
-          Inteligencia Artificial para esculpir una pieza única.</p>
-      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="service-card">
+          <span class="font-antonio text-pink" style="font-size: 4rem; line-height: 1; opacity: 0.8;">01</span>
+          <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">BRIEF & ESTRATEGIA</h3>
+          <p style="color: #aaa; font-size: 0.95rem;">Escuchamos tu visión con oídos creativos. Analizamos tu mercado para
+            diseñar una estrategia que rompa el ruido digital.</p>
+        </div>
 
-      <div class="service-card reveal">
-        <span class="font-antonio" style="font-size: 4rem; line-height: 1; color: #3b82f6; opacity: 0.8;">03</span>
-        <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">ENTREGA & SOPORTE</h3>
-        <p style="color: #aaa; font-size: 0.95rem;">Entregamos impacto y presencia. Te acompañamos en la implementación
-          y medimos resultados para garantizar trascendencia.</p>
+        <div class="service-card">
+          <span class="font-antonio text-gold" style="font-size: 4rem; line-height: 1; opacity: 0.8;">02</span>
+          <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">DIRECCIÓN DE ARTE & IA</h3>
+          <p style="color: #aaa; font-size: 0.95rem;">Creamos e iteramos combinando intuición humana y herramientas de
+            Inteligencia Artificial para esculpir una pieza única.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="font-antonio" style="font-size: 4rem; line-height: 1; color: #3b82f6; opacity: 0.8;">03</span>
+          <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">ENTREGA & SOPORTE</h3>
+          <p style="color: #aaa; font-size: 0.95rem;">Entregamos impacto y presencia. Te acompañamos en la implementación
+            y medimos resultados para garantizar trascendencia.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Tarifario -->
-  <section id="tarifario" class="section pricing">
-    <div class="container">
-      <div class="section-header reveal">
+  <section id="tarifario" class="container">
+    <div class="glass-section-card reveal">
+      <div class="section-header">
         <span class="section-kicker">INVERSIÓN & PLANES</span>
         <h2 class="section-title">Tarifario <span class="text-pink">2026</span></h2>
         <p class="section-desc" style="margin-bottom: 2rem;">Transparencia en nuestra innovación con alma creativa.</p>
@@ -467,8 +440,8 @@
         <button class="pricing-tab" data-tab="redes" onclick="Pricing.switchTab('redes')">@ REDES SOCIALES</button>
       </div>
 
-      <div id="pricing-cards-container" class="pricing__cards reveal">
-        <!-- Render dinámico por JS -->
+      <div id="pricing-cards-container" class="pricing__grid" style="margin-top: 3rem;">
+        <!-- Dynamic Pricing Cards Rendered Here by js/pricing.js -->
       </div>
     </div>
   </section>

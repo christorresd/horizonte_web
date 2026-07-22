@@ -100,9 +100,58 @@
   cursor: pointer;
 }
 
-/* Section Layout & Symmetry Standards */
-.section {
-  padding: 8rem 0;
+/* Glassmorphism Section Container Cards */
+.glass-section-card {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: 4.5rem 3rem;
+  margin-bottom: 5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.glass-section-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Portfolio Grid System */
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio__grid-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s, box-shadow 0.4s;
+}
+
+.portfolio__grid-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(232, 30, 97, 0.5);
+  box-shadow: 0 25px 50px rgba(232, 30, 97, 0.2);
+}
+
+.portfolio__grid-card:hover .portfolio__img {
+  transform: scale(1.05);
+}
+
+.portfolio__img-wrapper {
+  overflow: hidden;
+  height: 280px;
+}
+
+.portfolio__img-wrapper .portfolio__img {
+  transition: transform 0.6s ease;
 }
 
 .section-header {
