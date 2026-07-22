@@ -27,7 +27,7 @@
 }
 
 .navbar__logo img {
-  height: 48px;
+  height: 90px;
   width: auto;
 }
 
@@ -149,14 +149,12 @@
 }
 
 .holographic-text {
-  background: linear-gradient(
-    120deg, 
-    #ffffff 0%, 
-    #e81e61 25%, 
-    #fbc02d 50%, 
-    #e81e61 75%, 
-    #ffffff 100%
-  );
+  background: linear-gradient(120deg,
+      #ffffff 0%,
+      #e81e61 25%,
+      #fbc02d 50%,
+      #e81e61 75%,
+      #ffffff 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -167,8 +165,13 @@
 }
 
 @keyframes holographic-shimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .hero__arrow-graphic {
@@ -486,9 +489,11 @@
   .hero__grid {
     grid-template-columns: 1fr;
   }
+
   .navbar__menu {
     display: none;
   }
+
   .navbar__hamburger {
     display: block;
   }
