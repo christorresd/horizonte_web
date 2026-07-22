@@ -1,0 +1,105 @@
+/* ============================================
+   DESIGN SYSTEM & MAIN STYLES — HORIZONTE 2026
+   ============================================ */
+
+:root {
+  /* Brand Colors */
+  --color-pink: #d62d86;
+  --color-pink-light: #e81e61;
+  --color-pink-glow: rgba(232, 30, 97, 0.4);
+  
+  --color-gold: #e0b64c;
+  --color-gold-warm: #d7852c;
+  --color-gold-bright: #fbc02d;
+  --color-gold-glow: rgba(251, 192, 45, 0.4);
+
+  /* Background Neutrals */
+  --color-bg-deep: #0a0a0a;
+  --color-bg-dark: #121212;
+  --color-bg-card: #1a1a1a;
+  --color-bg-elevated: #242424;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-bright: rgba(255, 255, 255, 0.2);
+
+  /* Typography */
+  --font-display: 'Antonio', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Spacing */
+  --container-max: 1280px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: #ffffff;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  selection-background-color: var(--color-pink-light);
+  selection-color: #ffffff;
+}
+
+/* Textures */
+.bg-texture {
+  background-color: #0c0c0c;
+  background-image: linear-gradient(rgba(12, 12, 12, 0.85), rgba(12, 12, 12, 0.85)), url("../assets/images/background_grunge.png");
+  background-repeat: repeat;
+  background-size: 600px 600px;
+  background-attachment: fixed;
+}
+
+.bg-halftone {
+  background: transparent;
+}
+
+/* Typography Utilities */
+.font-antonio {
+  font-family: var(--font-display);
+}
+
+.font-montserrat {
+  font-family: var(--font-body);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2);
+  color: transparent;
+}
+
+.text-pink { color: var(--color-pink-light); }
+.text-gold { color: var(--color-gold-bright); }
+
+/* Layout Components */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-pink-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-bright);
+}
