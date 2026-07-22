@@ -1,0 +1,12 @@
+{
+  "title": "Horizonte Agencia Creativa - Estado del Proyecto y Decisiones de Diseño 2026",
+  "summary": "Memorización de arquitectura, diseño de portada con holograma neón, assets de portafolio, scroll infinito de clientes/portafolio, tarifario interactivo y configuración de repositorio.",
+  "timestamp": "2026-07-22T14:28:00-06:00",
+  "references": [
+    "file:///home/chris/Proyectos/horizonte_web/index.html",
+    "file:///home/chris/Proyectos/horizonte_web/styles/main.css",
+    "file:///home/chris/Proyectos/horizonte_web/styles/components.css",
+    "file:///home/chris/Proyectos/horizonte_web/js/app.js",
+    "file:///home/chris/Proyectos/horizonte_web/js/pricing.js"
+  ]
+}

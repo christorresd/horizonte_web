@@ -1,0 +1,35 @@
+{
+  "project": "Horizonte Agencia Creativa",
+  "domain": "hcreativa.com.mx",
+  "concept": "Inteligencia con Alma Creativa (Collage Digital Pop 2026)",
+  "orchestrator": "LARA (Senior Full-Stack Engineer)",
+  "engram_status": "ACTIVE_SYNCED",
+  "branding_tokens": {
+    "primary_pink": "#d62d86",
+    "primary_pink_light": "#e81e61",
+    "gold_bright": "#fbc02d",
+    "dark_bg": "#0c0c0c",
+    "fonts": {
+      "display": "Antonio",
+      "body": "Montserrat"
+    }
+  },
+  "contacts": {
+    "whatsapp_phone": "+52 312 133 10 67",
+    "tarifario_pdf": "./Referencias/TARIFARIO PRECIOS (1).pdf"
+  },
+  "github_repository": {
+    "owner": "christorresd",
+    "repo": "horizonte_web",
+    "url": "https://github.com/christorresd/horizonte_web",
+    "branch": "main"
+  },
+  "design_architecture": {
+    "hero": "Mano robótica blanca original intacta sosteniendo corazón anatómico de luz + texto holográfico + botón pill trascendamos + contenedor glassmorphism",
+    "canvas_background": "Lienzo HTML5 Canvas con malla neuronal sináptica flotante dorada/magenta al 35% opacidad",
+    "glassmorphism": "Cada sección principal (Portada, Nuestro porqué, Portafolio, Servicios, Proceso, Tarifario) está encapsulada en una tarjeta contenedora de cristal esmerilado con bisel de luz (.glass-section-card)",
+    "portfolio": "Retícula estática de cristal 2x2 con interacción hover zoom a mockups",
+    "pricing": "Sistema de pestañas dinámico en JS (pricing.js) renderizando 6 categorías de servicio con tarifas MXN + IVA y botones pill degradados .btn-pricing-quote",
+    "navbar": "Barra de navegación fija con cristal, logotipo oficial SVG y botón flotante circular de WhatsApp con vector oficial"
+  }
+}
