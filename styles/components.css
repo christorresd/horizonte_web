@@ -69,18 +69,19 @@
 
 .btn-whatsapp-nav {
   background: linear-gradient(135deg, var(--color-pink-light), var(--color-gold-bright));
-  color: white;
-  padding: 0.6rem 1.5rem;
+  color: #000000;
+  padding: 0.65rem 1.6rem;
   border-radius: 999px;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  white-space: nowrap;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
 }
 
 .btn-whatsapp-nav:hover {
