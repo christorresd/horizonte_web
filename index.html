@@ -24,6 +24,76 @@
 </head>
 <body class="bg-texture">
 
+  <!-- Global Synaptic Neural Background Canvas -->
+  <canvas id="neural-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; opacity: 0.35;"></canvas>
+
+  <script>
+    (function() {
+      const canvas = document.getElementById('neural-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height, particles;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initParticles();
+      }
+
+      function initParticles() {
+        particles = [];
+        const count = Math.floor((width * height) / 14000);
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            radius: Math.random() * 2 + 1
+          });
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#fbc02d';
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 150) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(232, 30, 97, ${0.65 * (1 - dist / 150)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+      resize();
+      animate();
+    })();
+  </script>
+
   <!-- Navigation Bar -->
   <nav id="navbar" class="navbar">
     <div class="container navbar__nav">
@@ -36,17 +106,24 @@
         <li><a href="#clientes" class="navbar__link">CLIENTES</a></li>
         <li><a href="#portafolio" class="navbar__link">PORTAFOLIO</a></li>
         <li><a href="#servicios" class="navbar__link">SERVICIOS</a></li>
+        <li><a href="#proceso" class="navbar__link">PROCESO</a></li>
         <li><a href="#tarifario" class="navbar__link">TARIFARIO</a></li>
       </ul>
 
-      <a href="https://wa.me/523121331067?text=Hola%20Horizonte!%20Me%20gustar%C3%ADa%20más%20informaci%C3%B3n" target="_blank" class="btn-whatsapp-nav">
-        <i data-lucide="message-circle"></i> 312 133 10 67
-      </a>
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <span style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:#4ade80;background:rgba(74,222,128,0.1);padding:0.3rem 0.8rem;border-radius:999px;border:1px solid rgba(74,222,128,0.2);" class="hidden-mobile">
+          <span style="width:8px;height:8px;background:#4ade80;border-radius:50%;animation:blink-cursor 1s infinite;"></span> DISPONIBLE 2026
+        </span>
+
+        <a href="https://wa.me/523121331067?text=Hola%20Horizonte!%20Me%20gustar%C3%ADa%20más%20informaci%C3%B3n" target="_blank" class="btn-whatsapp-nav">
+          <i data-lucide="message-circle"></i> 312 133 10 67
+        </a>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section (Recreated Reference Design) -->
-  <section class="hero bg-texture">
+  <section class="hero" style="background: transparent;">
     <!-- Curved topography lines element top right -->
     <svg class="hero__contour-bg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 100 Q 50 10, 100 100 T 190 100" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
@@ -56,7 +133,7 @@
     </svg>
 
     <div class="container hero__grid">
-      <!-- Left side: 3D Robot Arm holding Glowing Anatomical Heart (Exact Original Reference Asset) -->
+      <!-- Left side: Original Hand & Heart -->
       <div class="hero__img-container reveal">
         <img src="./assets/images/original_hand_heart_transparent.png" alt="Inteligencia con Alma Creativa - Mano Robótica y Corazón" class="hero__img-robot animate-float">
       </div>
@@ -206,6 +283,28 @@
     </div>
   </section>
 
+  <!-- Stats / Métricas Bar -->
+  <section class="container" style="margin: -2rem auto 4rem; position: relative; z-index: 10;">
+    <div style="background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;" class="reveal">
+      <div>
+        <div class="font-antonio text-pink" style="font-size: 3rem; line-height: 1; font-weight: 700;">+150</div>
+        <div style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600;">PROYECTOS ENTREGADOS</div>
+      </div>
+      <div>
+        <div class="font-antonio text-gold" style="font-size: 3rem; line-height: 1; font-weight: 700;">100%</div>
+        <div style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600;">INTENCIÓN & ALMA</div>
+      </div>
+      <div>
+        <div class="font-antonio" style="font-size: 3rem; line-height: 1; font-weight: 700; color: #3b82f6;">6</div>
+        <div style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600;">ÁREAS DE DOMINIO</div>
+      </div>
+      <div>
+        <div class="font-antonio" style="font-size: 3rem; line-height: 1; font-weight: 700; color: #4ade80;">2026</div>
+        <div style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 600;">TENDENCIA & VANGUARDIA</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Servicios / Teclado Creativo -->
   <section id="servicios" class="services container">
     <div class="reveal" style="margin-bottom: 4rem;">
@@ -217,7 +316,7 @@
 
     <div class="services__grid">
       <!-- Servicio 1: Branding -->
-      <div class="service-card reveal" onclick="Pricing.switchTab('branding'); window.location.href='#tarifario';">
+      <div class="service-card reveal" onclick="Pricing.navigateToTab('branding');">
         <div class="service-card__symbol">#</div>
         <div class="service-card__keycap">
           <i data-lucide="lightbulb" style="width: 42px; height: 42px;"></i>
@@ -228,7 +327,7 @@
       </div>
 
       <!-- Servicio 2: Diseño Gráfico -->
-      <div class="service-card reveal" onclick="Pricing.switchTab('grafico'); window.location.href='#tarifario';">
+      <div class="service-card reveal" onclick="Pricing.navigateToTab('grafico');">
         <div class="service-card__symbol">[ ]</div>
         <div class="service-card__keycap">
           <i data-lucide="pen-tool" style="width: 42px; height: 42px;"></i>
@@ -239,7 +338,7 @@
       </div>
 
       <!-- Servicio 3: Desarrollo Web -->
-      <div class="service-card reveal" onclick="Pricing.switchTab('web'); window.location.href='#tarifario';">
+      <div class="service-card reveal" onclick="Pricing.navigateToTab('web');">
         <div class="service-card__symbol">{ }</div>
         <div class="service-card__keycap" style="color: #3b82f6;">
           <i data-lucide="code" style="width: 42px; height: 42px;"></i>
@@ -250,7 +349,7 @@
       </div>
 
       <!-- Servicio 4: Audiovisual -->
-      <div class="service-card reveal" onclick="Pricing.switchTab('audiovisual'); window.location.href='#tarifario';">
+      <div class="service-card reveal" onclick="Pricing.navigateToTab('audiovisual');">
         <div class="service-card__symbol">&gt;</div>
         <div class="service-card__keycap" style="color: #22c55e;">
           <i data-lucide="camera" style="width: 42px; height: 42px;"></i>
@@ -261,7 +360,7 @@
       </div>
 
       <!-- Servicio 5: Streaming -->
-      <div class="service-card reveal" onclick="Pricing.switchTab('streaming'); window.location.href='#tarifario';">
+      <div class="service-card reveal" onclick="Pricing.navigateToTab('streaming');">
         <div class="service-card__symbol">.</div>
         <div class="service-card__keycap" style="color: #ef4444;">
           <i data-lucide="radio" style="width: 42px; height: 42px;"></i>
@@ -272,7 +371,7 @@
       </div>
 
       <!-- Servicio 6: Redes Sociales -->
-      <div class="service-card reveal" onclick="Pricing.switchTab('redes'); window.location.href='#tarifario';">
+      <div class="service-card reveal" onclick="Pricing.navigateToTab('redes');">
         <div class="service-card__symbol">@</div>
         <div class="service-card__keycap" style="color: var(--color-pink-light);">
           <i data-lucide="smartphone" style="width: 42px; height: 42px;"></i>
@@ -280,6 +379,35 @@
         <h3 class="service-card__title">REDES SOCIALES</h3>
         <p class="service-card__desc">Gestión estratégica, Reels en vertical y administración de pauta para conectar con tu público.</p>
         <span class="service-card__link" style="color: var(--color-pink-light);">VER TARIFAS →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Proceso (Así trabajamos) -->
+  <section id="proceso" class="container" style="padding: 6rem 1.5rem;">
+    <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+      <span style="color: var(--color-gold-bright); font-weight: 700; letter-spacing: 0.2em; font-size: 0.85rem; text-transform: uppercase;">NUESTRA METODOLOGÍA</span>
+      <h2 class="font-antonio" style="font-size: 3.5rem; margin-top: 0.5rem;">ASÍ CREAMOS CONTIGO</h2>
+      <p style="color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 1rem auto 0;">Un proceso estructurado de 3 pasos que garantiza resultados trascendentes para tu marca.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="service-card reveal">
+        <span class="font-antonio text-pink" style="font-size: 4rem; line-height: 1; opacity: 0.8;">01</span>
+        <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">BRIEF & ESTRATEGIA</h3>
+        <p style="color: #aaa; font-size: 0.95rem;">Escuchamos tu visión con oídos creativos. Analizamos tu mercado para diseñar una estrategia que rompa el ruido digital.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="font-antonio text-gold" style="font-size: 4rem; line-height: 1; opacity: 0.8;">02</span>
+        <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">DIRECCIÓN DE ARTE & IA</h3>
+        <p style="color: #aaa; font-size: 0.95rem;">Creamos e iteramos combinando intuición humana y herramientas de Inteligencia Artificial para esculpir una pieza única.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="font-antonio" style="font-size: 4rem; line-height: 1; color: #3b82f6; opacity: 0.8;">03</span>
+        <h3 class="font-antonio" style="font-size: 1.8rem; margin: 1rem 0 0.5rem;">ENTREGA & SOPORTE</h3>
+        <p style="color: #aaa; font-size: 0.95rem;">Entregamos impacto y presencia. Te acompañamos en la implementación y medimos resultados para garantizar trascendencia.</p>
       </div>
     </div>
   </section>

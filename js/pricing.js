@@ -64,6 +64,14 @@ const Pricing = (() => {
     renderTab(tabKey);
   }
 
+  function navigateToTab(tabKey) {
+    switchTab(tabKey);
+    const target = document.getElementById('tarifario');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   function renderTab(tabKey) {
     const container = document.getElementById('pricing-cards-container');
     if (!container) return;
