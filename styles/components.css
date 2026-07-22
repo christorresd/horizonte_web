@@ -86,9 +86,29 @@
   height: 24px;
 }
 
-.btn-whatsapp-icon-only:hover {
-  transform: scale(1.15) rotate(8deg);
-  box-shadow: 0 8px 25px var(--color-pink-glow);
+.btn-pricing-quote {
+  background: linear-gradient(135deg, var(--color-pink-light), var(--color-gold-bright)) !important;
+  color: #000000 !important;
+  padding: 0.9rem 1.5rem !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.05em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+  box-shadow: 0 10px 25px rgba(232, 30, 97, 0.3) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s !important;
+  margin-top: auto !important;
+}
+
+.btn-pricing-quote:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 15px 35px var(--color-pink-glow) !important;
 }
 
 /* Mobile Hamburger */

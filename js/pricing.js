@@ -86,7 +86,7 @@ const Pricing = (() => {
         <ul class="pricing-card__list">
           ${pkg.items.map(item => `<li><i data-lucide="check" style="width:16px;height:16px;color:var(--color-pink-light);display:inline-block;vertical-align:middle;margin-right:6px;"></i> ${item}</li>`).join('')}
         </ul>
-        <a href="https://wa.me/523121331067?text=${encodeURIComponent('Hola Horizonte! Me interesa cotizar el paquete: ' + pkg.name)}" target="_blank" class="btn-whatsapp-nav" style="width:100%;justify-content:center;margin-top:auto;">COTIZAR POR WHATSAPP</a>
+        <a href="https://wa.me/523121331067?text=${encodeURIComponent('Hola Horizonte! Me interesa cotizar el paquete: ' + pkg.name)}" target="_blank" class="btn-pricing-quote">COTIZAR POR WHATSAPP</a>
       </div>
     `).join('');
     if (typeof lucide !== 'undefined') lucide.createIcons();
