@@ -552,6 +552,92 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Individual Pricing Cards */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s, box-shadow 0.4s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.pricing-card--popular {
+  border-color: var(--color-pink-light);
+  box-shadow: 0 20px 45px rgba(232, 30, 97, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card--popular:hover {
+  border-color: var(--color-pink-light);
+  box-shadow: 0 30px 65px rgba(232, 30, 97, 0.35);
+}
+
+.pricing-card__badge {
+  background: var(--color-pink-light);
+  color: #ffffff;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.pricing-card__title {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.pricing-card__price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--color-gold-bright);
+  line-height: 1;
+}
+
+.pricing-card__price span {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+  font-weight: 600;
+}
+
+.pricing-card__subtitle {
+  color: #bbbbbb;
+  font-size: 0.95rem;
+  margin: 1.2rem 0 1.8rem;
+  line-height: 1.5;
+}
+
+.pricing-card__list {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+
+.pricing-card__list li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
 }
 
 /* WhatsApp Direct CTA Footer/Banner */

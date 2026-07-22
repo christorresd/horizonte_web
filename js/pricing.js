@@ -78,17 +78,18 @@ const Pricing = (() => {
     const data = PRICING_DATA[tabKey];
 
     container.innerHTML = data.packages.map(pkg => `
-      <div class="service-card ${pkg.popular ? 'border-pink' : ''}" style="${pkg.popular ? 'border-color: var(--color-pink-light);' : ''}">
-        ${pkg.popular ? '<span style="background:var(--color-pink-light);color:#fff;padding:0.2rem 0.8rem;border-radius:999px;font-size:0.75rem;font-weight:bold;position:absolute;top:1rem;right:1rem;">POPULAR</span>' : ''}
-        <h3 class="font-antonio" style="font-size:1.8rem;margin-bottom:0.5rem;">${pkg.name}</h3>
-        <div style="font-size:2.2rem;font-weight:bold;font-family:var(--font-display);color:var(--color-gold-bright);">${pkg.price} <span style="font-size:0.9rem;color:#888;">MXN + IVA</span></div>
-        <p style="color:#aaa;font-size:0.9rem;margin:1rem 0;">${pkg.subtitle}</p>
-        <ul style="list-style:none;margin-bottom:2rem;font-size:0.95rem;color:#ddd;">
-          ${pkg.items.map(item => `<li style="margin-bottom:0.5rem;">✓ ${item}</li>`).join('')}
+      <div class="pricing-card ${pkg.popular ? 'pricing-card--popular' : ''}">
+        ${pkg.popular ? '<span class="pricing-card__badge">POPULAR</span>' : ''}
+        <h3 class="font-antonio pricing-card__title">${pkg.name}</h3>
+        <div class="pricing-card__price">${pkg.price} <span>MXN + IVA</span></div>
+        <p class="pricing-card__subtitle">${pkg.subtitle}</p>
+        <ul class="pricing-card__list">
+          ${pkg.items.map(item => `<li><i data-lucide="check" style="width:16px;height:16px;color:var(--color-pink-light);display:inline-block;vertical-align:middle;margin-right:6px;"></i> ${item}</li>`).join('')}
         </ul>
-        <a href="https://wa.me/523121331067?text=${encodeURIComponent('Hola Horizonte! Me interesa cotizar el paquete: ' + pkg.name)}" target="_blank" class="btn-whatsapp-nav" style="width:100%;justify-content:center;">COTIZAR POR WHATSAPP</a>
+        <a href="https://wa.me/523121331067?text=${encodeURIComponent('Hola Horizonte! Me interesa cotizar el paquete: ' + pkg.name)}" target="_blank" class="btn-whatsapp-nav" style="width:100%;justify-content:center;margin-top:auto;">COTIZAR POR WHATSAPP</a>
       </div>
     `).join('');
+    if (typeof lucide !== 'undefined') lucide.createIcons();
   }
 
   return { init, switchTab };
