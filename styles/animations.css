@@ -25,14 +25,75 @@
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
-/* Scroll reveal class */
+/* Scroll reveal class (Dinamismo mejorado) */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(45px) scale(0.98);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+/* Typewriter Cursor animation */
+.type-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--color-pink-light);
+  animation: blink 0.8s infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Efecto Ruido TV Análoga Oscuro (Textura Fija con Parpadeo Sutil sin Brincos) */
+@keyframes analog-grain {
+  0%, 100% { opacity: 0.05; }
+  25% { opacity: 0.08; }
+  50% { opacity: 0.04; }
+  75% { opacity: 0.07; }
+}
+
+@keyframes scanlines-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* ============================================
+   ANIMACIONES 3D VECTORIALES PARA EMBLEMAS
+   ============================================ */
+
+/* Giroscopio 3D (Fase 1: Radar/Brief) */
+@keyframes rotate3d-outer {
+  0% { transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(60deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+@keyframes rotate3d-inner {
+  0% { transform: rotateX(-45deg) rotateY(0deg); }
+  100% { transform: rotateX(-45deg) rotateY(-360deg); }
+}
+
+/* Cubo/Poliedro 3D (Fase 2: Arte & IA) */
+@keyframes rotate3d-polyhedron {
+  0% { transform: rotateX(15deg) rotateY(0deg) rotateZ(10deg); }
+  100% { transform: rotateX(375deg) rotateY(360deg) rotateZ(10deg); }
+}
+
+/* Pirámide / Faro 3D (Fase 3: Entrega & Soporte) */
+@keyframes float3d-beacon {
+  0%, 100% { transform: translateY(0px) rotateY(0deg) rotateX(10deg); }
+  50% { transform: translateY(-8px) rotateY(180deg) rotateX(-5deg); }
+}
+
+/* Marquesina Neón Continua Infinita */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }

@@ -9,17 +9,89 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Intersection Observer for animations
+  // Intersection Observer for dynamic animations & interactive counters
   const revealElements = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+        
+        // Trigger Animated Number Counter if stat elements exist inside
+        const counters = entry.target.querySelectorAll('.counter');
+        counters.forEach(counter => {
+          if (!counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            animateCounter(counter);
+          }
+        });
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || 0);
+    const duration = 1800; // ms
+    const startTime = performance.now();
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const current = easeProgress * target;
+
+      el.textContent = current.toFixed(decimals);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target.toFixed(decimals);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Dynamic Typewriter / Word Swapper Engine for Hero Title
+  const dynamicWordEl = document.getElementById('dynamic-word');
+  if (dynamicWordEl) {
+    const words = ['creativa'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+
+      if (isDeleting) {
+        charIndex--;
+        dynamicWordEl.textContent = currentWord.substring(0, charIndex);
+      } else {
+        charIndex++;
+        dynamicWordEl.textContent = currentWord.substring(0, charIndex);
+      }
+
+      let speed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        speed = 7500; // Pausa elegante de 7.5s con la palabra completa leíble
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 800; // Pausa sutil antes de volver a escribir
+      }
+
+      setTimeout(typeEffect, speed);
+    }
+
+    // Iniciar rotación limpia
+    dynamicWordEl.textContent = '';
+    typeEffect();
+  }
 
   // Global Synaptic Neural Background Canvas Engine (Option 1)
   const canvas = document.getElementById('neural-canvas');
@@ -35,14 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      const particleCount = Math.floor((width * height) / 12000);
+      // Cantidad óptima de nodos neuronales interconectados (1 por cada 15000px)
+      const particleCount = Math.min(75, Math.floor((width * height) / 15000));
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.7,
-          vy: (Math.random() - 0.5) * 0.7,
-          radius: Math.random() * 2.5 + 1.5
+          vx: (Math.random() - 0.5) * 0.45,
+          vy: (Math.random() - 0.5) * 0.45,
+          radius: Math.random() * 2 + 1.2
         });
       }
     }
@@ -67,13 +140,15 @@ document.addEventListener('DOMContentLoaded', () => {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
+          
+          if (Math.abs(dx) > 180 || Math.abs(dy) > 180) continue;
+          
           const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 170) {
+          if (dist < 180) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(232, 30, 97, ${(1 - dist / 170) * 0.8})`;
+            ctx.strokeStyle = `rgba(232, 30, 97, ${(1 - dist / 180) * 0.75})`;
             ctx.lineWidth = 1.2;
             ctx.stroke();
           }
